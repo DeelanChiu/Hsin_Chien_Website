@@ -112,7 +112,9 @@ p {
 
 @media (min-width:992px) {
     #mainNav .navbar-nav .nav-item .nav-link {
-        font-size: .9rem
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        font-size: 1.2rem
     }
     #mainNav .navbar-nav .nav-item .nav-link:hover {
         color: rgba(255, 255, 255, .4)
@@ -275,4 +277,8 @@ p {
 
 .font-weight-light {
     font-weight: 100!important
+}
+
+#about-intro {
+    margin: auto;
 }
