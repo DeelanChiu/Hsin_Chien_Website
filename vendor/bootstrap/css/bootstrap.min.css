@@ -8299,6 +8299,7 @@ button.bg-dark:hover {
 
 .mb-3,
 .my-3 {
+    margin-top: 4rem!important;
     margin-bottom: 1rem!important
 }
 
@@ -9347,7 +9348,7 @@ button.bg-dark:hover {
     }
     .mb-lg-0,
     .my-lg-0 {
-        margin-bottom: 0!important
+        margin-bottom: 4rem!important
     }
     .ml-lg-0,
     .mx-lg-0 {

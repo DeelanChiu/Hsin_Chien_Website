@@ -48,6 +48,9 @@
                         <a class="nav-link text-uppercase text-expanded" href="about.html">About</a>
                     </li>
                     <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="organization.html">Organization</a>
+                    </li>
+                    <li class="nav-item px-lg-4">
                         <a class="nav-link text-uppercase text-expanded" href="products.html">Products</a>
                     </li>
                     <li class="nav-item px-lg-4">
@@ -96,6 +99,7 @@
     $(document).ready(function() {
         $("#chair_message").load("chair_msg.txt");
         $("#msg-lang").click(function() {
+            lang = !lang;
             $("#msg-lang").empty();
             $("#chair_head_upper").empty();
             $("#chair_head_lower").empty();
@@ -109,7 +113,6 @@
                 $("#chair_head_upper").append("A Message");;
                 $("#chair_head_lower").append("From The Chairman");;
             }
-            lang = !lang;
         });
     });
 </script>
