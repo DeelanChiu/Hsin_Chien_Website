@@ -68,7 +68,7 @@
                 <div class="row">
                     <div class="col-xl-9 col-lg-10 mx-auto">
                         <div class="bg-faded rounded p-5">
-                            <a class="btn btn-primary lang-switch-button" id="msg-lang" style="color:white">換成中文版</a>
+                            <a class="btn btn-primary lang-switch-button" id="chair_msg_lang" style="color:white">換成中文版</a>
                             <h2 class="section-heading mb-4">
                                 <br>
                                 <span class="section-heading-upper" id="chair_head_upper">A message</span>
@@ -97,19 +97,19 @@
 <script>
     var lang = false;
     $(document).ready(function() {
-        $("#chair_message").load("chair_msg.txt");
-        $("#msg-lang").click(function() {
+        $("#chair_message").load("texts/chair_msg_eng.html");
+        $("#chair_msg_lang").click(function() {
             lang = !lang;
-            $("#msg-lang").empty();
+            $("#chair_msg_lang").empty();
             $("#chair_head_upper").empty();
             $("#chair_head_lower").empty();
             if (lang) {
-                $("#chair_message").load("chair_msg_chi.txt");
-                $("#msg-lang").append("Change to English");
+                $("#chair_message").load("texts/chair_msg_chi.html");
+                $("#chair_msg_lang").append("Change to English");
                 $("#chair_head_lower").append("董事長的話");;
             } else {
-                $("#chair_message").load("chair_msg.txt");
-                $("#msg-lang").append("換成中文版");
+                $("#chair_message").load("texts/chair_msg_eng.html");
+                $("#chair_msg_lang").append("換成中文版");
                 $("#chair_head_upper").append("A Message");;
                 $("#chair_head_lower").append("From The Chairman");;
             }

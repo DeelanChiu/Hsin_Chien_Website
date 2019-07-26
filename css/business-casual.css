@@ -264,3 +264,7 @@ p {
     display: inline-block;
     width: 10rem;
 }
+
+.org-diagram-block {
+    cursor: pointer;
+}

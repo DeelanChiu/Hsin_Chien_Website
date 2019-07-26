@@ -66,9 +66,15 @@
                 <div class="product-item-title d-flex">
                     <div class="bg-faded p-5 d-flex mr-auto rounded">
                         <h2 class="section-heading mb-0">
-                            <span class="section-heading-upper">Company</span>
-                            <span class="section-heading-lower">Organization</span>
+                            <span class="section-heading-upper" id="org_head_upper">Company</span>
+                            <span class="section-heading-lower" id="org_head_lower">Organization</span>
+                            <p class="mb-1" style="font-family: Lora; font-size: 1rem; text-transform: none">
+                                <br> In order to optimize our ship management, Hsin Chien Marine Co., Ltd. is organized into the structure depicted above. Please click on each department for additional available information.
+                            </p>
+                            <br>
+                            <a class="btn btn-primary lang-switch-button" id="org_msg_lang" style="color:white">換成中文版</a>
                         </h2>
+                        <br>
                     </div>
                 </div>
                 <svg class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" width="1110" height="700">
@@ -77,7 +83,8 @@
                     <g font-family="Raleway" font-size="20" style="fill:rgb(75, 93, 122)">
                         <g transform="translate(390 30)">
                             <rect width="138" height="100" />
-                            <text x="15" y="60" fill="white">Shareholder</text>
+                            <text class="org-diagram-eng" x="15" y="57" fill="white">Shareholder</text>
+                            <text class="org-diagram-chi" x="40" y="57" fill="white">股東會</text>
 
                             <path d="M 69 100 69 117"
                             stroke="black" stroke-width="2" fill="none"/>
@@ -93,16 +100,19 @@
                                 <path d="M 69 -18 69 0"
                                     stroke="black" stroke-width="2" fill="none"/>
                                 <rect width="138" height="100"/>
-                                <text x="35" y="60" fill="white">Auditor</text>
+                                <text class="org-diagram-eng" x="35" y="57" fill="white">Auditor</text>
+                                <text class="org-diagram-chi" x="40" y="57" fill="white">監察人</text>
                             </g>
 
                             <g transform="translate(400 0)">
                                 <path d="M 69 -18 69 0"
                                     stroke="black" stroke-width="2" fill="none"/>
                                 <rect width="138" height="100"/>
-                                <text x="30" y="26" fill="white">Board of</text>
-                                <text x="25" y="56" fill="white">Directors/</text>
-                                <text x="25" y="86" fill="white">Chairman</text>
+                                <text class="org-diagram-eng" x="30" y="26" fill="white">Board of</text>
+                                <text class="org-diagram-eng" x="25" y="56" fill="white">Directors/</text>
+                                <text class="org-diagram-eng" x="25" y="86" fill="white">Chairman</text>
+                                <text class="org-diagram-chi" x="40" y="40" fill="white">董事會</text>
+                                <text class="org-diagram-chi" x="40" y="70" fill="white">董事長</text>
                             </g>
 
                         </g>
@@ -111,8 +121,10 @@
                             <path d="M 69 -35 69 0"
                                 stroke="black" stroke-width="2" fill="none"/>
                             <rect width="138" height="100" />
-                            <text x="18" y="40" fill="white">President &</text>
-                            <text x="3" y="70" fill="white">Vice President</text>
+                            <text class="org-diagram-eng" x="18" y="40" fill="white">President &</text>
+                            <text class="org-diagram-eng" x="3" y="70" fill="white">Vice President</text>
+                            <text class="org-diagram-chi" x="40" y="40" fill="white">總經理</text>
+                            <text class="org-diagram-chi" x="30" y="70" fill="white">副總經理</text>
                             <path d="M 69 100 69 117"
                                 stroke="black" stroke-width="2" fill="none"/>
                         </g>
@@ -122,67 +134,104 @@
 
                         <g transform="translate(17 435)">
                             <g transform="translate(0 0)">
-                                <a href="index.html">
+                                <a  class="org-diagram-block" href="index.html">
                                     <rect width="138" height="100" style="fill:rgb(75, 93, 122)"/>
-                                    <text x="45" y="40" fill="white">HCM</text>
-                                    <text x="27" y="70" fill="white">Shanghai</text>
+                                    <text class="org-diagram-eng" x="45" y="40" fill="white">HCM</text>
+                                    <text class="org-diagram-eng" x="27" y="70" fill="white">Shanghai</text>
+                                    <text class="org-diagram-chi" x="30" y="57" fill="white">新健上海</text>
                                 </a>
                             </g>
                             <g transform="translate(150 0)">
                                 <path d="M 69 -18 69 0"
                                     stroke="black" stroke-width="2" fill="none"/>
-                                <a href="index.html">
+                                <a  class="org-diagram-block" id="tech_info_block">
                                     <rect width="138" height="100" style="fill:rgb(75, 93, 122)" />
-                                    <text x="25" y="40" fill="white">Technical</text>
-                                    <text x="13" y="70" fill="white">Department</text>
+                                    <text class="org-diagram-eng" x="25" y="40" fill="white">Technical</text>
+                                    <text class="org-diagram-eng" x="13" y="70" fill="white">Department</text>
+                                    <text class="org-diagram-chi" x="40" y="57" fill="white">工務部</text>
                                 </a>
                             </g>
                             <g transform="translate(300 0)">
                                 <path d="M 69 -18 69 0"
                                     stroke="black" stroke-width="2" fill="none"/>
-                                <a href="index.html">
+                                <a class="org-diagram-block" id="marine_info_block">
                                     <rect width="138" height="100" style="fill:rgb(75, 93, 122)"/>
-                                    <text x="38" y="40" fill="white">Marine</text>
-                                    <text x="13" y="70" fill="white">Department</text>
+                                    <text class="org-diagram-eng" x="38" y="40" fill="white">Marine</text>
+                                    <text class="org-diagram-eng" x="13" y="70" fill="white">Department</text>
+                                    <text class="org-diagram-chi" x="40" y="57" fill="white">船務部</text>
                                 </a>
                             </g>
                             <g transform="translate(450 0)">
                                 <path d="M 69 -18 69 0"
                                     stroke="black" stroke-width="2" fill="none"/>
-                                <a href="index.html">
+                                <a  class="org-diagram-block" href="index.html">
                                     <rect width="138" height="100" style="fill:rgb(75, 93, 122)"/>
-                                    <text x="20" y="40" fill="white">Chartering</text>
-                                    <text x="13" y="70" fill="white">Department</text>
+                                    <text class="org-diagram-eng" x="20" y="40" fill="white">Chartering</text>
+                                    <text class="org-diagram-eng" x="13" y="70" fill="white">Department</text>
+                                    <text class="org-diagram-chi" x="40" y="57" fill="white">業務部</text>
                                 </a>
                             </g>
                             <g transform="translate(600 0)">
                                 <path d="M 69 -18 69 0"
                                     stroke="black" stroke-width="2" fill="none"/>
-                                <a href="index.html">
+                                <a class="org-diagram-block" href="index.html">
                                     <rect width="138" height="100" style="fill:rgb(75, 93, 122)"/>
-                                    <text x="30" y="26" fill="white">General</text>
-                                    <text x="27" y="56" fill="white">Planning</text>
-                                    <text x="13" y="86" fill="white">Department</text>
+                                    <text class="org-diagram-eng" x="30" y="26" fill="white">General</text>
+                                    <text class="org-diagram-eng" x="27" y="56" fill="white">Planning</text>
+                                    <text class="org-diagram-eng" x="13" y="86" fill="white">Department</text>
+                                    <text class="org-diagram-chi" x="40" y="57" fill="white">總企部</text>
                                 </a>
                             </g>
                             <g transform="translate(750 0)">
                                 <path d="M 69 -18 69 0"
                                     stroke="black" stroke-width="2" fill="none"/>
                                 <rect width="138" height="100" />
-                                <text x="30" y="40" fill="white">Finance</text>
-                                <text x="13" y="70" fill="white">Department</text>                                
+                                <text class="org-diagram-eng" x="30" y="40" fill="white">Finance</text>
+                                <text class="org-diagram-eng" x="13" y="70" fill="white">Department</text>   
+                                <text class="org-diagram-chi" x="40" y="57" fill="white">財務部</text>                             
                             </g>
                         </g>
 
                     </g>
                         
                 </svg>
+                <!--
                 <div class="product-item-description d-flex ml-auto">
                     <div class="bg-faded p-5 rounded">
                         <p class="mb-0">
                             In order to optimize our ship management, Hsin Chien Marine Co., Ltd. is organized into the structure depicted above. Please click on each department for additional available information.
                         </p>
                     </div>
+                </div>
+                -->
+            </div>
+        </div>
+    </section>
+
+    <section class="page-section clearfix" style="margin-top: -4rem">
+        <div class="container">
+            <div>
+                <!-- <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="img/intro.jpg" alt=""> -->
+                <div class="intro-text left-0 text-center bg-faded p-5 rounded" id="tech-block" style="display:none">
+                    <h2 class="section-heading mb-4">
+                        <span class="section-heading-lower" style="font-size: 2rem; font-weight: bold">
+                            <div class="org-diagram-eng">Technical Department</div>
+                            <div class="org-diagram-chi">工務部</div>
+                        </span>
+                    </h2>
+                    <p id="technical-info">
+                    </p>
+                </div>
+
+                <div class="intro-text left-0 text-center bg-faded p-5 rounded" id="marine-block" style="display:none">
+                    <h2 class="section-heading mb-4">
+                        <span class="section-heading-lower" style="font-size: 2rem; font-weight: bold">
+                            <div class="org-diagram-eng">Marine Department</div>
+                            <div class="org-diagram-chi">船務部</div>
+                        </span>
+                    </h2>
+                    <p id="marine-info">
+                    </p>
                 </div>
             </div>
         </div>
@@ -200,5 +249,59 @@
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
+<script>
+    var lang = false;
+    $(document).ready(function() {
+        $("#technical-info").load("texts/technical_info_eng.html");
+        $("#marine-info").load("texts/marine_info_eng.html");
+        var orgEngElements = document.getElementsByClassName("org-diagram-eng");
+        var orgChiElements = document.getElementsByClassName("org-diagram-chi");
+        for (var i = 0; i < orgChiElements.length; i++) {
+            orgChiElements[i].style.display = "none";
+        }
+        $("#org_msg_lang").click(function() {
+            lang = !lang;
+            $("#org_msg_lang").empty();
+            $("#org_head_upper").empty();
+            $("#org_head_lower").empty();
+            if (lang) {
+                $("#org_msg_lang").append("Change to English");
+                $("#org_head_lower").append("組織概況");;
+                $("#technical-info").load("texts/technical_info_chi.html");
+                $("#marine-info").load("texts/marine_info_chi.html");
+
+                for (var i = 0; i < orgEngElements.length; i++) {
+                    orgEngElements[i].style.display = "none";
+                }
+                for (var i = 0; i < orgChiElements.length; i++) {
+                    orgChiElements[i].style.display = "inline";
+                }
+            } else {
+                $("#org_msg_lang").append("換成中文版");
+                $("#org_head_upper").append("Company");
+                $("#org_head_lower").append("Organization");
+                $("#technical-info").load("texts/technical_info_eng.html");
+                $("#marine-info").load("texts/marine_info_eng.html");
+
+                for (var i = 0; i < orgEngElements.length; i++) {
+                    orgEngElements[i].style.display = "inline";
+                }
+                for (var i = 0; i < orgChiElements.length; i++) {
+                    orgChiElements[i].style.display = "none";
+                }
+            }
+        });
+        $("#tech_info_block").click(function() {
+            document.getElementById("tech-block").style.display = "inherit";
+            document.getElementById("marine-block").style.display = "none";
+        });
+        $("#marine_info_block").click(function() {
+            document.getElementById("tech-block").style.display = "none";
+            document.getElementById("marine-block").style.display = "inherit";
+        });
+
+    });
+</script>
 
 </html>
