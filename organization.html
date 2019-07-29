@@ -134,7 +134,7 @@
 
                         <g transform="translate(17 435)">
                             <g transform="translate(0 0)">
-                                <a  class="org-diagram-block" href="index.html">
+                                <a  class="org-diagram-block" id="shanghai_info_block">
                                     <rect width="138" height="100" style="fill:rgb(75, 93, 122)"/>
                                     <text class="org-diagram-eng" x="45" y="40" fill="white">HCM</text>
                                     <text class="org-diagram-eng" x="27" y="70" fill="white">Shanghai</text>
@@ -164,7 +164,7 @@
                             <g transform="translate(450 0)">
                                 <path d="M 69 -18 69 0"
                                     stroke="black" stroke-width="2" fill="none"/>
-                                <a  class="org-diagram-block" href="index.html">
+                                <a  class="org-diagram-block" id="chartering_info_block">
                                     <rect width="138" height="100" style="fill:rgb(75, 93, 122)"/>
                                     <text class="org-diagram-eng" x="20" y="40" fill="white">Chartering</text>
                                     <text class="org-diagram-eng" x="13" y="70" fill="white">Department</text>
@@ -174,7 +174,7 @@
                             <g transform="translate(600 0)">
                                 <path d="M 69 -18 69 0"
                                     stroke="black" stroke-width="2" fill="none"/>
-                                <a class="org-diagram-block" href="index.html">
+                                <a class="org-diagram-block" id="planning_info_block">
                                     <rect width="138" height="100" style="fill:rgb(75, 93, 122)"/>
                                     <text class="org-diagram-eng" x="30" y="26" fill="white">General</text>
                                     <text class="org-diagram-eng" x="27" y="56" fill="white">Planning</text>
@@ -233,6 +233,40 @@
                     <p id="marine-info">
                     </p>
                 </div>
+
+                <div class="intro-text left-0 text-center bg-faded p-5 rounded" id="chartering-block" style="display:none">
+                    <h2 class="section-heading mb-4">
+                        <span class="section-heading-lower" style="font-size: 2rem; font-weight: bold">
+                            <div class="org-diagram-eng">Chartering Department</div>
+                            <div class="org-diagram-chi">業務部</div>
+                        </span>
+                    </h2>
+                    <p id="chartering-info">
+                    </p>
+                </div>
+
+                <div class="intro-text left-0 text-center bg-faded p-5 rounded" id="planning-block" style="display:none">
+                    <h2 class="section-heading mb-4">
+                        <span class="section-heading-lower" style="font-size: 2rem; font-weight: bold">
+                            <div class="org-diagram-eng">General Planning Department</div>
+                            <div class="org-diagram-chi">總企部</div>
+                        </span>
+                    </h2>
+                    <p id="planning-info">
+                    </p>
+                </div>
+
+                <div class="intro-text left-0 text-center bg-faded p-5 rounded" id="shanghai-block" style="display:none">
+                    <h2 class="section-heading mb-4">
+                        <span class="section-heading-lower" style="font-size: 2rem; font-weight: bold">
+                            <div class="org-diagram-eng">HCM Shanghai</div>
+                            <div class="org-diagram-chi">新健上海</div>
+                        </span>
+                    </h2>
+                    <p id="shanghai-info">
+                    </p>
+                </div>
+
             </div>
         </div>
     </section>
@@ -255,6 +289,10 @@
     $(document).ready(function() {
         $("#technical-info").load("texts/technical_info_eng.html");
         $("#marine-info").load("texts/marine_info_eng.html");
+        $("#chartering-info").load("texts/chartering_info_eng.html");
+        $("#planning-info").load("texts/planning_info_eng.html");
+        $("#shanghai-info").load("texts/shanghai_info_eng.html");
+
         var orgEngElements = document.getElementsByClassName("org-diagram-eng");
         var orgChiElements = document.getElementsByClassName("org-diagram-chi");
         for (var i = 0; i < orgChiElements.length; i++) {
@@ -270,6 +308,9 @@
                 $("#org_head_lower").append("組織概況");;
                 $("#technical-info").load("texts/technical_info_chi.html");
                 $("#marine-info").load("texts/marine_info_chi.html");
+                $("#chartering-info").load("texts/chartering_info_chi.html");
+                $("#planning-info").load("texts/planning_info_chi.html");
+                $("#shanghai-info").load("texts/shanghai_info_chi.html");
 
                 for (var i = 0; i < orgEngElements.length; i++) {
                     orgEngElements[i].style.display = "none";
@@ -283,6 +324,9 @@
                 $("#org_head_lower").append("Organization");
                 $("#technical-info").load("texts/technical_info_eng.html");
                 $("#marine-info").load("texts/marine_info_eng.html");
+                $("#chartering-info").load("texts/chartering_info_eng.html");
+                $("#planning-info").load("texts/planning_info_eng.html");
+                $("#shanghai-info").load("texts/shanghai_info_eng.html");
 
                 for (var i = 0; i < orgEngElements.length; i++) {
                     orgEngElements[i].style.display = "inline";
@@ -295,10 +339,37 @@
         $("#tech_info_block").click(function() {
             document.getElementById("tech-block").style.display = "inherit";
             document.getElementById("marine-block").style.display = "none";
+            document.getElementById("chartering-block").style.display = "none";
+            document.getElementById("planning-block").style.display = "none";
+            document.getElementById("shanghai-block").style.display = "none";
         });
         $("#marine_info_block").click(function() {
             document.getElementById("tech-block").style.display = "none";
             document.getElementById("marine-block").style.display = "inherit";
+            document.getElementById("chartering-block").style.display = "none";
+            document.getElementById("planning-block").style.display = "none";
+            document.getElementById("shanghai-block").style.display = "none";
+        });
+        $("#chartering_info_block").click(function() {
+            document.getElementById("tech-block").style.display = "none";
+            document.getElementById("marine-block").style.display = "none";
+            document.getElementById("chartering-block").style.display = "inherit";
+            document.getElementById("planning-block").style.display = "none";
+            document.getElementById("shanghai-block").style.display = "none";
+        });
+        $("#planning_info_block").click(function() {
+            document.getElementById("tech-block").style.display = "none";
+            document.getElementById("marine-block").style.display = "none";
+            document.getElementById("chartering-block").style.display = "none";
+            document.getElementById("planning-block").style.display = "inherit";
+            document.getElementById("shanghai-block").style.display = "none";
+        });
+        $("#shanghai_info_block").click(function() {
+            document.getElementById("tech-block").style.display = "none";
+            document.getElementById("marine-block").style.display = "none";
+            document.getElementById("chartering-block").style.display = "none";
+            document.getElementById("planning-block").style.display = "none";
+            document.getElementById("shanghai-block").style.display = "inherit";
         });
 
     });
