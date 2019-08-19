@@ -1,14 +1,3 @@
-/*
-var http = require('http');
-var fs = require('fs');
-http.createServer(function(req, res) {
-    fs.readFile('index.html', function(err, data) {
-        res.writeHead(200, { 'Content-Type': 'text/html' });
-        res.write(data);
-        res.end();
-    });
-}).listen(8000);c
-*/
 const express = require('express');
 const app = express();
 
@@ -17,6 +6,24 @@ app.use(express.static('public'));
 // http://expressjs.com/en/starter/basic-routing.html
 app.get('/', function(request, response) {
     response.sendFile(__dirname + '/view/index.html');
+});
+app.get('/index.html', function(request, response) {
+    response.sendFile(__dirname + '/view/index.html');
+});
+app.get('/about.html', function(request, response) {
+    response.sendFile(__dirname + '/view/about.html');
+});
+app.get('/organization.html', function(request, response) {
+    response.sendFile(__dirname + '/view/organization.html');
+});
+app.get('/vessels.html', function(request, response) {
+    response.sendFile(__dirname + '/view/vessels.html');
+});
+app.get('/products.html', function(request, response) {
+    response.sendFile(__dirname + '/view/products.html');
+});
+app.get('/store.html', function(request, response) {
+    response.sendFile(__dirname + '/view/store.html');
 });
 
 // listen for requests :)
