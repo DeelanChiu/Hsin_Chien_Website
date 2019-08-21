@@ -1,7 +1,20 @@
 const express = require('express');
 const app = express();
+const http = require('http').createServer(app);
+var io = require('socket.io')(http);
 
 app.use(express.static('public'));
+
+const readXlsx = require('read-excel-file/node');
+
+
+io.on('connection', function(socket) {
+    readXlsx('hcm_vessels.xlsx').then((rows) => {
+        // `rows` is an array of rows
+        // each row being an array of cells.
+        io.emit("vessel info", rows);
+    })
+});
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get('/', function(request, response) {
@@ -27,6 +40,6 @@ app.get('/store.html', function(request, response) {
 });
 
 // listen for requests :)
-const listener = app.listen(process.env.PORT, function() {
-    console.log('Your app is listening on port ' + listener.address().port);
+http.listen(3000, function() {
+    console.log('Your app is listening on port ' + 3000);
 });
