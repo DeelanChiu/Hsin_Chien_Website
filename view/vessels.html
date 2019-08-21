@@ -103,46 +103,7 @@
                     <div class="row">
                         <div class="col-xl-9 col-lg-10 mx-auto">
                             <div class="bg-faded rounded p-5">
-                                <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
-                                    <thead>
-                                        <tr>
-                                            <th class="th-sm">Vessel
-                                            </th>
-                                            <th class="th-sm">Flag
-                                            </th>
-                                            <th class="th-sm">Built
-                                            </th>
-                                            <th class="th-sm">Yard
-                                            </th>
-                                            <th class="th-sm">GT
-                                            </th>
-                                            <th class="th-sm">DWT
-                                            </th>
-                                            <th class="th-sm">Type
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="vessel_rows">
-                                        <div></div>
-                                    </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th class="th-sm">Vessel
-                                            </th>
-                                            <th class="th-sm">Flag
-                                            </th>
-                                            <th class="th-sm">Built
-                                            </th>
-                                            <th class="th-sm">Yard
-                                            </th>
-                                            <th class="th-sm">GT
-                                            </th>
-                                            <th class="th-sm">DWT
-                                            </th>
-                                            <th class="th-sm">Type
-                                            </th>
-                                        </tr>
-                                    </tfoot>
+                                <table id="vessel_table" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
                                 </table>
                             </div>
                         </div>
@@ -173,20 +134,35 @@
     var socket = io();
     socket.on("vessel info", function(info) {
         var headers = info.shift();
-        var vessel_info = '';
+        var vessel_table = '';
 
-        for (let row of info) {
-            console.log(row);
-            vessel_info += '<tr>'
-            for (let cell of row) {
-                vessel_info += '<td>' + cell + '</td>';
-            }
-            vessel_info += '</tr>'
+        vessel_table += '<thead>';
+        var header_row = '<tr>';
+        for (let head of headers) {
+            header_row += '<th>' + head + '</th>';
         }
-        $('#vessel_rows').append(vessel_info);
+        header_row += '</tr>';
+        vessel_table += header_row;
+        vessel_table += '</thead>';
+
+        vessel_table += '<tbody>';
+        for (let row of info) {
+            vessel_table += '<tr>';
+            for (let cell of row) {
+                vessel_table += '<td>' + cell + '</td>';
+            }
+            vessel_table += '</tr>'
+        }
+        vessel_table += '</tbody>';
+
+        vessel_table += '<tfoot>';
+        vessel_table += header_row;
+        vessel_table += '</tfoot>';
+
+        $('#vessel_table').append(vessel_table);
 
         $(document).ready(function() {
-            $('#dtBasicExample').DataTable();
+            $('#vessel_table').DataTable();
             $('.dataTables_length').addClass('bs-select');
         });
     });
