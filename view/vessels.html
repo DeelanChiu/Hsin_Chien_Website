@@ -39,6 +39,22 @@
     table.dataTable thead .sorting_desc_disabled:before {
         bottom: .5em;
     }
+    
+    .vessel_name_cell .tooltip_pic {
+        left: 11.5rem;
+        visibility: hidden;
+        background-color: white;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 2;
+    }
+    
+    .vessel_name_cell:hover .tooltip_pic {
+        visibility: visible;
+    }
 </style>
 
 <body>
@@ -148,6 +164,17 @@
         vessel_table += '<tbody>';
         for (let row of info) {
             vessel_table += '<tr>';
+            if (row[0] !== "TBN†") {
+                var vessel_name = row.shift();
+                vessel_table += '<td class="vessel_name_cell">';
+                vessel_table += '<div style="width:100%">' + vessel_name + '</div>';
+                vessel_table += '<span class = "tooltip_pic">';
+                vessel_name = vessel_name.replace(" ", "_");
+                vessel_name = vessel_name.replace("*", "");
+                vessel_table += '<img src="img/vessels/' + vessel_name + '.jpg" style="object-fit:contain; width: 30rem;">';
+                vessel_table += '</span>';
+                vessel_table += '</td>';
+            }
             for (let cell of row) {
                 vessel_table += '<td>' + cell + '</td>';
             }
