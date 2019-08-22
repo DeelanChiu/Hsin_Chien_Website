@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>HSIN CHIEN MARINE CO., LTD.</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/business-casual.min.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<style>
+    table {
+        border-collapse: collapse;
+        border-spacing: 2px;
+        width: 100%;
+    }
+    
+    table,
+    th,
+    td {
+        border: 1px solid #dee2e6;
+        padding: .3rem;
+    }
+    
+    tr:nth-child(odd) {
+        background-color: rgba(0, 0, 0, .05);
+    }
+</style>
+
+<body>
+
+    <h1 class="site-heading text-center text-white d-none d-lg-block">
+        <span class="site-heading-lower">Hsin Chien Marine Co., Ltd.</span>
+    </h1>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Start Bootstrap</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="index.html">Home
+              <span class="sr-only">(current)</span>
+            </a>
+                    </li>
+                    <li class="nav-item  px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="organization.html">Organization</a>
+                    </li>
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="vessels.html">Vessels</a>
+                    </li>
+                    <li class="nav-item active px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="careers.html">Careers</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-section about-heading">
+        <div class="container">
+            <div class="about-heading-content">
+                <div class="row">
+                    <div class="col-xl-9 col-lg-10 mx-auto">
+                        <div class="bg-faded rounded p-5" style="margin-top:5rem">
+                            <h2 class="section-heading mb-4">
+                                <br>
+                                <span class="section-heading-lower">Contact Us</span>
+                            </h2>
+                            <div>
+
+                                <table id="contact_table">
+                                    <!--
+                                    <thead>
+                                        <tr style="background-color:transparent">
+                                            <th>Department</th>
+                                            <th>Description</th>
+                                            <th>Email</th>
+                                            <th>Telephone</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Chartering Department</td>
+                                            <td>chartering business</td>
+                                            <td>chtrg@hcm.com.tw</td>
+                                            <td>+886-2-25080389 #158</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Marine Department</td>
+                                            <td>ship & crew management</td>
+                                            <td>marine@hcm.com.tw</td>
+                                            <td>+886-2-25080389 #165</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Technical Department</td>
+                                            <td>ship technical & engineering</td>
+                                            <td>tech@hcm.com.tw</td>
+                                            <td>+886-2-25080389 #127</td>
+                                        </tr>
+                                    </tbody>
+                                    -->
+                                </table>
+                                <br>
+                                <b>Tel</b>: +886-2-25080389 <br>
+                                <b>Fax</b>: +886-2-25081473 <br>
+                                <b>Address</b>: 3F., No. 4, Sec. 3, Minchuan E. Rd., Taipei 10477, Taiwan <br>
+                                <b>GPS Coordinates</b>: <a href="http://goo.gl/maps/8qWr" target="_blank">N 25° 3' 43.45" E 121° 32' 19.12"</a> <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer text-faded text-center py-5">
+        <div class="container">
+            <p class="m-0 small">Copyright &copy; Your Website 2019</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var socket = io();
+    socket.emit('query contact');
+    socket.on("contact info", function(info) {
+        var headers = info.shift();
+        var contact_table = '';
+
+        contact_table += '<thead>';
+        var header_row = '<tr style="background-color:transparent">';
+        for (let head of headers) {
+            header_row += '<th>' + head + '</th>';
+        }
+        header_row += '</tr>';
+        contact_table += header_row;
+        contact_table += '</thead>';
+
+        contact_table += '<tbody>';
+        for (let row of info) {
+            contact_table += '<tr>';
+            for (let cell of row) {
+                if (cell == null) {
+                    cell = "";
+                }
+                contact_table += '<td>' + cell + '</td>';
+            }
+            contact_table += '</tr>'
+        }
+        contact_table += '</tbody>';
+
+        $('#contact_table').append(contact_table);
+    });
+</script>
+
+</html>

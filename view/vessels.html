@@ -88,10 +88,10 @@
                         <a class="nav-link text-uppercase text-expanded" href="vessels.html">Vessels</a>
                     </li>
                     <li class="nav-item px-lg-4">
-                        <a class="nav-link text-uppercase text-expanded" href="products.html">Products</a>
+                        <a class="nav-link text-uppercase text-expanded" href="contact.html">Contact Us</a>
                     </li>
                     <li class="nav-item px-lg-4">
-                        <a class="nav-link text-uppercase text-expanded" href="store.html">Store</a>
+                        <a class="nav-link text-uppercase text-expanded" href="careers.html">Careers</a>
                     </li>
                 </ul>
             </div>
@@ -108,6 +108,7 @@
                             <span class="section-heading-lower" id="org_head_lower">Vessels</span>
                             <p class="mb-1" style="font-family: Lora; font-size: 1rem; text-transform: none">
                                 These are the vessels that are currently in Hsin Chien's fleet.<br> Vessels marked with * are operated by our Chartering department (please send query message to chtrg@hcm.com.tw). Vessels marked with † are under construction.
+                                <br> <br> Place your mouse over the vessel's name for a photo of the vessel.
                             </p>
                             <br>
                         </h2>
@@ -148,6 +149,7 @@
 <script src="/socket.io/socket.io.js"></script>
 <script>
     var socket = io();
+    socket.emit('query vessel');
     socket.on("vessel info", function(info) {
         var headers = info.shift();
         var vessel_table = '';
@@ -176,6 +178,9 @@
                 vessel_table += '</td>';
             }
             for (let cell of row) {
+                if (cell == null) {
+                    cell = "";
+                }
                 vessel_table += '<td>' + cell + '</td>';
             }
             vessel_table += '</tr>'
