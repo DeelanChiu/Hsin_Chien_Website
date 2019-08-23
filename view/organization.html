@@ -140,8 +140,8 @@
 
                         <g transform="translate(17 435)">
                             <g transform="translate(0 0)">
-                                <a  class="org-diagram-block" id="shanghai_info_block" onClick="showBlock(this.id)">
-                                    <rect width="138" height="100" style="fill:rgb(75, 93, 122)"/>
+                                <a class="block-button" id="shanghai_info_block" onClick="showInfoBlock(this)">
+                                    <rect width="138" height="100"/>
                                     <text class="org-diagram-eng" x="45" y="40" fill="white">HCM</text>
                                     <text class="org-diagram-eng" x="27" y="70" fill="white">Shanghai</text>
                                     <text class="org-diagram-chi" x="30" y="57" fill="white">新健上海</text>
@@ -150,8 +150,8 @@
                             <g transform="translate(150 0)">
                                 <path d="M 69 -18 69 0"
                                     stroke="black" stroke-width="2" fill="none"/>
-                                <a  class="org-diagram-block" id="tech_info_block" onClick="showBlock(this.id)">
-                                    <rect width="138" height="100" style="fill:rgb(75, 93, 122)" />
+                                <a  class="block-button" id="technical_info_block" onClick="showInfoBlock(this)">
+                                    <rect width="138" height="100" />
                                     <text class="org-diagram-eng" x="25" y="40" fill="white">Technical</text>
                                     <text class="org-diagram-eng" x="13" y="70" fill="white">Department</text>
                                     <text class="org-diagram-chi" x="40" y="57" fill="white">工務部</text>
@@ -160,8 +160,8 @@
                             <g transform="translate(300 0)">
                                 <path d="M 69 -18 69 0"
                                     stroke="black" stroke-width="2" fill="none"/>
-                                <a class="org-diagram-block" id="marine_info_block" onClick="showBlock(this.id)">
-                                    <rect width="138" height="100" style="fill:rgb(75, 93, 122)"/>
+                                <a class="block-button" id="marine_info_block" onClick="showInfoBlock(this)">
+                                    <rect width="138" height="100"/>
                                     <text class="org-diagram-eng" x="38" y="40" fill="white">Marine</text>
                                     <text class="org-diagram-eng" x="13" y="70" fill="white">Department</text>
                                     <text class="org-diagram-chi" x="40" y="57" fill="white">船務部</text>
@@ -170,8 +170,8 @@
                             <g transform="translate(450 0)">
                                 <path d="M 69 -18 69 0"
                                     stroke="black" stroke-width="2" fill="none"/>
-                                <a  class="org-diagram-block" id="chartering_info_block" onClick="showBlock(this.id)">
-                                    <rect width="138" height="100" style="fill:rgb(75, 93, 122)"/>
+                                <a  class="block-button" id="chartering_info_block" onClick="showInfoBlock(this)">
+                                    <rect width="138" height="100"/>
                                     <text class="org-diagram-eng" x="20" y="40" fill="white">Chartering</text>
                                     <text class="org-diagram-eng" x="13" y="70" fill="white">Department</text>
                                     <text class="org-diagram-chi" x="40" y="57" fill="white">業務部</text>
@@ -180,8 +180,8 @@
                             <g transform="translate(600 0)">
                                 <path d="M 69 -18 69 0"
                                     stroke="black" stroke-width="2" fill="none"/>
-                                <a class="org-diagram-block" id="planning_info_block" onClick="showBlock(this.id)">
-                                    <rect width="138" height="100" style="fill:rgb(75, 93, 122)"/>
+                                <a class="block-button" id="planning_info_block" onClick="showInfoBlock(this)">
+                                    <rect width="138" height="100"/>
                                     <text class="org-diagram-eng" x="30" y="26" fill="white">General</text>
                                     <text class="org-diagram-eng" x="27" y="56" fill="white">Planning</text>
                                     <text class="org-diagram-eng" x="13" y="86" fill="white">Department</text>
@@ -201,15 +201,7 @@
                     </g>
                         
                 </svg>
-                <!--
-                <div class="product-item-description d-flex ml-auto">
-                    <div class="bg-faded p-5 rounded">
-                        <p class="mb-0">
-                            In order to optimize our ship management, Hsin Chien Marine Co., Ltd. is organized into the structure depicted above. Please click on each department for additional available information.
-                        </p>
-                    </div>
-                </div>
-                -->
+
             </div>
         </div>
     </section>
@@ -218,7 +210,7 @@
         <div class="container">
             <div>
                 <!-- <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="img/intro.jpg" alt=""> -->
-                <div class="intro-text left-0 text-center bg-faded p-5 rounded" id="tech-block" style="display:none">
+                <div class="intro-text left-0 text-center bg-faded p-5 rounded" id="technical-block" style="display:none">
                     <h2 class="section-heading mb-4">
                         <span class="section-heading-lower" style="font-size: 2rem; font-weight: bold">
                             <div class="org-diagram-eng">Technical Department</div>
@@ -291,70 +283,88 @@
 </body>
 
 <script>
-    var lang = false;
+    var lang = 'eng';
     var departments = ["technical", "marine", "chartering", "planning", "shanghai"];
     $(document).ready(function() {
-        $("#technical-info").load("texts/technical_info_eng.html");
-        $("#marine-info").load("texts/marine_info_eng.html");
-        $("#chartering-info").load("texts/chartering_info_eng.html");
-        $("#planning-info").load("texts/planning_info_eng.html");
-        $("#shanghai-info").load("texts/shanghai_info_eng.html");
+        for (let dept of departments) {
+            $("#" + dept + "-info").load("texts/" + dept + "_info_" + lang + ".html");
+        }
 
-        var orgEngElements = document.getElementsByClassName("org-diagram-eng");
-        var orgChiElements = document.getElementsByClassName("org-diagram-chi");
-        for (var i = 0; i < orgChiElements.length; i++) {
-            orgChiElements[i].style.display = "none";
+        var orgElements = {
+            "eng": document.getElementsByClassName("org-diagram-eng"),
+            "chi": document.getElementsByClassName("org-diagram-chi")
+        };
+
+        for (var i = 0; i < orgElements["chi"].length; i++) {
+            orgElements["chi"][i].style.display = "none";
         }
         $("#org_msg_lang").click(function() {
-            lang = !lang;
+            if (lang == "eng") {
+                lang = "chi";
+            } else {
+                lang = "eng";
+            }
             $("#org_msg_lang").empty();
             $("#org_head_upper").empty();
             $("#org_head_lower").empty();
-            if (lang) {
+            if (lang == "chi") {
                 $("#org_msg_lang").append("Change to English");
-                $("#org_head_lower").append("組織概況");;
-                $("#technical-info").load("texts/technical_info_chi.html");
-                $("#marine-info").load("texts/marine_info_chi.html");
-                $("#chartering-info").load("texts/chartering_info_chi.html");
-                $("#planning-info").load("texts/planning_info_chi.html");
-                $("#shanghai-info").load("texts/shanghai_info_chi.html");
+                $("#org_head_lower").append("組織概況");
 
-                for (var i = 0; i < orgEngElements.length; i++) {
-                    orgEngElements[i].style.display = "none";
+                for (var i = 0; i < orgElements["eng"].length; i++) {
+                    orgElements["eng"][i].style.display = "none";
                 }
-                for (var i = 0; i < orgChiElements.length; i++) {
-                    orgChiElements[i].style.display = "inline";
+                for (var i = 0; i < orgElements["chi"].length; i++) {
+                    orgElements["chi"][i].style.display = "inline";
                 }
             } else {
                 $("#org_msg_lang").append("換成中文版");
                 $("#org_head_upper").append("Company");
                 $("#org_head_lower").append("Organization");
-                $("#technical-info").load("texts/technical_info_eng.html");
-                $("#marine-info").load("texts/marine_info_eng.html");
-                $("#chartering-info").load("texts/chartering_info_eng.html");
-                $("#planning-info").load("texts/planning_info_eng.html");
-                $("#shanghai-info").load("texts/shanghai_info_eng.html");
 
-                for (var i = 0; i < orgEngElements.length; i++) {
-                    orgEngElements[i].style.display = "inline";
+                for (var i = 0; i < orgElements["eng"].length; i++) {
+                    orgElements["eng"][i].style.display = "inline";
                 }
-                for (var i = 0; i < orgChiElements.length; i++) {
-                    orgChiElements[i].style.display = "none";
+                for (var i = 0; i < orgElements["chi"].length; i++) {
+                    orgElements["chi"][i].style.display = "none";
                 }
+            }
+
+            for (let dept of departments) {
+                $("#" + dept + "-info").load("texts/" + dept + "_info_" + lang + ".html");
             }
         });
 
     });
 
-    function showBlock(blockId) {
-        var showBlockId = blockId.replace("info_", "");
+    var currDept = '';
+
+    function showInfoBlock(block) {
+        var dept = block.id.substring(0, block.id.indexOf('_'));
+        //block.children[1].style.fill = "black";
+        //$('#' + blockId + " > text").css("fill", "#e6a756");
+        var showBlockId = block.id.replace("info_", "");
         showBlockId = showBlockId.replace("_", '-');
-        document.getElementById("tech-block").style.display = "none";
-        document.getElementById("marine-block").style.display = "none";
-        document.getElementById("chartering-block").style.display = "none";
-        document.getElementById("planning-block").style.display = "none";
-        document.getElementById("shanghai-block").style.display = "none";
+        if (currDept !== '') {
+            document.getElementById(currDept + "-block").style.display = "none";
+            document.getElementById(currDept + "_info_block").classList.add('block-button')
+            document.getElementById(currDept + "_info_block").classList.remove('block-button-active')
+                /*
+                document.getElementById(currDept + "_info_block").children[1].style.fill = "white";
+                document.getElementById(currDept + "_info_block").children[2].style.fill = "white";
+                document.getElementById(currDept + "_info_block").children[3].style.fill = "white";
+                */
+        }
         document.getElementById(showBlockId).style.display = "inherit";
+        block.classList.add('block-button-active')
+        block.classList.remove('block-button')
+            /*
+            block.children[1].style.fill = "black";
+            block.children[2].style.fill = "black";
+            block.children[3].style.fill = "black";
+            */
+
+        currDept = dept;
     }
 </script>
 

@@ -7047,7 +7047,7 @@ button.bg-dark:hover {
 
 .d-flex {
     display: -ms-flexbox!important;
-    display: flex!important
+    display: flex
 }
 
 .d-inline-flex {

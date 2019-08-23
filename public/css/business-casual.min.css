@@ -279,6 +279,16 @@ p {
     font-weight: 100!important
 }
 
-.org-diagram-block {
+.block-button {
     cursor: pointer;
+    fill: rgb(75, 93, 122);
+}
+
+.block-button-active {
+    cursor: pointer;
+    fill: #e6a756;
+}
+
+.block-button:hover {
+    fill: #e6a756;
 }
