@@ -78,6 +78,9 @@
                         <a class="nav-link text-uppercase text-expanded" href="organization.html">Organization</a>
                     </li>
                     <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item px-lg-4">
                         <a class="nav-link text-uppercase text-expanded" href="vessels.html">Vessels</a>
                     </li>
                     <li class="nav-item px-lg-4">
@@ -190,8 +193,6 @@
     var socket = io();
     socket.emit('query career');
     socket.on("career info", function(info) {
-        console.log("info");
-        console.log(info);
         var headers = info.shift();
         var career_table = '';
 
