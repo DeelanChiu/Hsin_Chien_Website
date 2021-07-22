@@ -14,7 +14,7 @@
         "express": "^4.16.4",
         "read-excel-file": "^4.0.2",
         "socket.io": "^2.2.0",
-        "xlsx": "^0.15.1"
+        "xlsx": "^0.17.0"
     },
     "engines": {
         "node": "8.x"
