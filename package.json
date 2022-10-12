@@ -12,7 +12,7 @@
     "dependencies": {
         "@mysql/xdevapi": "8.0.17",
         "express": "^4.16.4",
-        "read-excel-file": "^4.0.2",
+        "read-excel-file": "^5.5.0",
         "socket.io": "^2.2.0",
         "xlsx": "^0.15.1"
     },
